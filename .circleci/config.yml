@@ -36,4 +36,4 @@ jobs:
       # run tests!
       - run:
           name: "Run Jest and Send Coverage Reports To Coveralls"
-          command: yarn test --coverage --coverageReporters=text-lcov | coveralls
+          command: yarn test --coverage --coverageReporters=text-lcov --watchAll=false | coveralls
