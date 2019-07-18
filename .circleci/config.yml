@@ -35,7 +35,5 @@ jobs:
 
       # run tests!
       - run:
-          name: "Run Jest and Collect Coverage Reports"
-          command: yarn test --collectCoverage=true --watchAll=false
-      - store_artifacts:
-          path: coverage
+          name: "Run Jest and Send Coverage Reports To Coveralls"
+          command: yarn test --coverage --coverageReporters=text-lcov | coveralls

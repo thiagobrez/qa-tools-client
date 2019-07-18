@@ -32,5 +32,8 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.5"
   }
 }
