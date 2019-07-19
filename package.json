@@ -5,8 +5,7 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "coveralls": "^3.0.5"
+    "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,5 +33,7 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "coveralls": "^3.0.5"
+  }
 }
