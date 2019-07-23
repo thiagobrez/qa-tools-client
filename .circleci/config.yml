@@ -14,11 +14,11 @@ jobs:
     steps:
       - checkout
 
-      - restore_cache:
-          keys:
-            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-            - v1-deps-{{ .Branch }}
-            - v1-deps
+#      - restore_cache:
+#          keys:
+#            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+#            - v1-deps-{{ .Branch }}
+#            - v1-deps
 
       - run: yarn install --frozen-lockfile
 
