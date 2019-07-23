@@ -14,14 +14,13 @@ jobs:
     steps:
       - checkout
 
-#      - restore_cache:
-#          keys:
-#            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-#            - v1-deps-{{ .Branch }}
-#            - v1-deps
+      - restore_cache:
+          keys:
+            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+            - v1-deps-{{ .Branch }}
+            - v1-deps
 
-#      - run: yarn install --frozen-lockfile
-      - run: yarn install
+      - run: yarn install --frozen-lockfile
 
       - save_cache:
           key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
@@ -34,7 +33,7 @@ jobs:
 
       - run:
           name: "Start app"
-          command: yarn start & wait-on http://localhost:3000
+          command: yarn start & ./node_modules/wait-on/bin/wait-on.js http://localhost:3000
 
       - run:
           name: "Run E2E Tests"
