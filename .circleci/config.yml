@@ -33,9 +33,9 @@ jobs:
 
       - run:
           name: "Start app"
-          command: yarn start && ./node_modules/wait-on/bin/wait-on http://localhost:3000
+          command: yarn start
           background: true
 
       - run:
           name: "Run E2E Tests"
-          command: $(yarn bin)/cypress run
+          command: ./node_modules/wait-on/bin/wait-on http://localhost:3000 && $(yarn bin)/cypress run
