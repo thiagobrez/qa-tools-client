@@ -1,18 +1,11 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
       - image: circleci/node:12.6.0
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
+      - image: cypress/base:8
+        environment:
+          TERM: xterm
 
     working_directory: ~/repo
 
@@ -22,21 +15,23 @@ jobs:
     steps:
       - checkout
 
-      # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+            - v1-deps-{{ .Branch }}
+            - v1-deps
 
-      - run: yarn install
+      - run: yarn install --frozen-lockfile
 
       - save_cache:
+          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+            - ~/.cache
 
-      # run tests!
       - run:
-          name: "Run Jest and Send Coverage Reports To Coveralls"
+          name: "Run Unit and Integration Tests and send to Coveralls"
           command: yarn test --coverage --coverageReporters=text-lcov --watchAll=false | ./node_modules/coveralls/bin/coveralls.js
+
+      - run:
+          name: "Run E2E Tests"
+          command: $(yarn bin)/cypress run
