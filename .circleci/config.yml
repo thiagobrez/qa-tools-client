@@ -20,7 +20,8 @@ jobs:
 #            - v1-deps-{{ .Branch }}
 #            - v1-deps
 
-      - run: yarn install --frozen-lockfile
+#      - run: yarn install --frozen-lockfile
+      - run: yarn install
 
       - save_cache:
           key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
