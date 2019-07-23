@@ -33,7 +33,7 @@ jobs:
 
       - run:
           name: "Start app"
-          command: yarn start & ./node_modules/wait-on/bin/wait-on http://localhost:3000
+          command: yarn start && ./node_modules/wait-on/bin/wait-on http://localhost:3000
 
       - run:
           name: "Run E2E Tests"
