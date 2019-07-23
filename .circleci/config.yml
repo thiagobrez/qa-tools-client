@@ -2,7 +2,6 @@ version: 2
 jobs:
   build:
     docker:
-#      - image: circleci/node:12.6.0
       - image: cypress/base:8
         environment:
           TERM: xterm
@@ -31,6 +30,10 @@ jobs:
       - run:
           name: "Run Unit and Integration Tests and send to Coveralls"
           command: yarn test --coverage --coverageReporters=text-lcov --watchAll=false | ./node_modules/coveralls/bin/coveralls.js
+
+      - run:
+          name: "Start app"
+          command: yarn start & wait-on http://localhost:3000
 
       - run:
           name: "Run E2E Tests"
