@@ -1,0 +1,41 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: cypress/base:8
+        environment:
+          TERM: xterm
+
+    working_directory: ~/repo
+
+    environment:
+      - NODE_ENV: development
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+            - v1-deps-{{ .Branch }}
+            - v1-deps
+
+      - run: yarn install --frozen-lockfile
+
+      - save_cache:
+          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - ~/.cache
+
+      - run:
+          name: "Run Unit and Integration Tests and send to Coveralls"
+          command: yarn test --coverage --coverageReporters=text-lcov --watchAll=false | ./node_modules/coveralls/bin/coveralls.js
+
+      - run:
+          name: "Start app"
+          command: yarn start
+          background: true
+
+      - run:
+          name: "Run E2E Tests"
+          command: ./node_modules/wait-on/bin/wait-on http://localhost:3000 && $(yarn bin)/cypress run --record --key 0aeefb76-c72b-4ba1-86b3-ba8511a75994
