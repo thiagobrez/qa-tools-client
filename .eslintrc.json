@@ -1,13 +1,15 @@
 {
-  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "es6": true,
     "jest": true
   },
   "extends": [
+    "react-app",
     "airbnb",
-    "plugin:cypress/recommended"
+    "plugin:cypress/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -22,26 +24,52 @@
   },
   "plugins": [
     "react",
-    "jsx-a11y",
-    "import"
+    "import",
+    "jsx-a11y"
   ],
   "rules": {
     "react/jsx-filename-extension": [
       "error",
       {
         "extensions": [
-          ".js",
-          ".jsx"
+          ".tsx"
         ]
       }
     ],
-    "global-require": "off",
     "import/prefer-default-export": "off",
-    "no-unused-expressions": [
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "import/no-extraneous-dependencies": [
       "error",
       {
-        "allowTaggedTemplates": true
+        "devDependencies": true
       }
+    ],
+    "react/jsx-first-prop-new-line": [
+      1,
+      "never"
+    ],
+    "react/jsx-max-props-per-line": [
+      1,
+      {
+        "maximum": 1
+      }
+    ],
+    "react/jsx-indent-props": [
+      1,
+      "first"
     ]
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx"
+      ]
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
   }
 }

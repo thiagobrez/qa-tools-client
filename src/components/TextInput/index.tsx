@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import './styles.css';
 
-function TextInput() {
+interface Props {
+  color: string;
+  backgroundColor: string;
+}
+
+export default function TextInput({ color, backgroundColor }: Props) {
   const [text, setText] = useState('');
 
   return (
@@ -11,10 +15,9 @@ function TextInput() {
         placeholder="type here"
         value={text}
         onChange={e => setText(e.target.value)}
+        style={{ color, backgroundColor }}
       />
       <p>{text}</p>
     </div>
   );
 }
-
-export default TextInput;

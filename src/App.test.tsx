@@ -12,7 +12,11 @@ it('renders without crashing', () => {
 });
 
 it('inputs message', () => {
-  const { getByPlaceholderText, getByText } = render(<TextInput />);
+  const { getByPlaceholderText, getByText } = render(
+    <TextInput color="white"
+               backgroundColor="black"
+    />,
+  );
 
   const inputMessage = 'react';
   fireEvent.change(getByPlaceholderText(/type here/i), {
