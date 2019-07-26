@@ -29,7 +29,7 @@ jobs:
 
       - run:
           name: "Run Unit and Integration Tests and send to Codecov"
-          command: yarn test --coverage --coverageReporters=text-lcov --watchAll=false | ./node_modules/codecov/bin/codecov.js
+          command: yarn test --coverage --coverageReporters=text-lcov --watchAll=false | ./node_modules/codecov/bin/codecov -t {{ CODECOV_TOKEN }}
 #          command: yarn test --coverage --coverageReporters=text-lcov --watchAll=false | ./node_modules/coveralls/bin/coveralls.js
 
       - run:
