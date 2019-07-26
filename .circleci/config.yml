@@ -28,9 +28,8 @@ jobs:
             - ~/.cache
 
       - run:
-          name: "Run Unit and Integration Tests and send to Codecov"
-          command: yarn test --coverage --coverageReporters=text-lcov --watchAll=false | ./node_modules/codecov/bin/codecov -t {{ CODECOV_TOKEN }}
-#          command: yarn test --coverage --coverageReporters=text-lcov --watchAll=false | ./node_modules/coveralls/bin/coveralls.js
+          name: "Run Unit and Integration Tests and send to Coveralls"
+          command: yarn test --coverage --coverageReporters=text-lcov --watchAll=false | ./node_modules/coveralls/bin/coveralls.js
 
       - run:
           name: "Start app"
