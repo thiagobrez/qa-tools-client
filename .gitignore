@@ -24,3 +24,4 @@ yarn-error.log*
 
 .idea
 .coveralls.yml
+src/e2e/node_modules
