@@ -59,6 +59,15 @@
     "react/jsx-indent-props": [
       1,
       "first"
+    ],
+    "spaced-comment": [
+      "error",
+      "always",
+      {
+        "markers": [
+          "/"
+        ]
+      }
     ]
   },
   "settings": {
