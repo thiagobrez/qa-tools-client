@@ -6,76 +6,38 @@
   },
   "extends": [
     "react-app",
-    "airbnb",
     "plugin:cypress/recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint"
+    "prettier/@typescript-eslint",
+    "airbnb"
   ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
+    "ecmaFeatures": { "jsx": true },
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "import",
-    "jsx-a11y"
-  ],
+  "plugins": ["react", "import", "jsx-a11y"],
   "rules": {
-    "react/jsx-filename-extension": [
-      "error",
-      {
-        "extensions": [
-          ".tsx"
-        ]
-      }
-    ],
-    "import/prefer-default-export": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "react/jsx-one-expression-per-line": "off",
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": true
-      }
-    ],
-    "react/jsx-first-prop-new-line": [
-      1,
-      "never"
-    ],
-    "react/jsx-max-props-per-line": [
-      1,
-      {
-        "maximum": 1
-      }
-    ],
-    "react/jsx-indent-props": [
-      1,
-      "first"
-    ],
-    "spaced-comment": [
-      "error",
-      "always",
-      {
-        "markers": [
-          "/"
-        ]
-      }
-    ]
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx", ".jsx", ".js"] }],
+    "react/jsx-first-prop-new-line": [1, "never"],
+    "react/jsx-max-props-per-line": [1, { "maximum": 1 }],
+    "react/jsx-indent-props": [1, "first"],
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "no-unused-expressions": ["error", { "allowTaggedTemplates": true }],
+    "spaced-comment": ["error", "always", { "markers": ["/"] }],
+    "global-require": "off"
   },
   "settings": {
     "import/parsers": {
-      "@typescript-eslint/parser": [
-        ".ts",
-        ".tsx"
-      ]
+      "@typescript-eslint/parser": [".ts", ".tsx"]
     },
     "import/resolver": {
       "typescript": {}
