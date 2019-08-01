@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import TextInput from './components/TextInput';
+import Button from './components/Button';
 import './App.css';
 
 const App: React.FC = () => (
@@ -12,6 +13,10 @@ const App: React.FC = () => (
       />
       <TextInput color="white"
                  backgroundColor="black"
+      />
+      <Button text="Click here"
+              backgroundColor="darkred"
+              color="white"
       />
     </header>
   </div>
