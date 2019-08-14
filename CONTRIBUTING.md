@@ -21,7 +21,7 @@ The commit message should be structured as follows:
 The main structural elements are:
 
 | Element         | Description                              | Where to use | Correlates to (SemVer) |
-|-----------------|------------------------------------------|--------------|------------------------|
+| --------------- | ---------------------------------------- | ------------ | ---------------------- |
 | fix             | patches a bug in the codebase            | \<type>      | PATCH (1.0.1)          |
 | feat            | introduces a new feature to the codebase | \<type>      | MINOR (1.1.0)          |
 | BREAKING CHANGE | introduces a breaking API change         | \<body>      | MAJOR (2.0.0)          |
@@ -110,3 +110,5 @@ Add the following to ```package.json```:
     }
   }
 ```
+
+
