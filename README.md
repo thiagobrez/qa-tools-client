@@ -1,44 +1,147 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# qa-tools-client
 
-## Available Scripts
+Testing the integration of the following tools/technologies:
+- **IDE**
+  - VS Code
+- **Front-end library**
+  - ReactJS
+- **Testing**
+  - **Unit & Integration**
+    - Jest
+    - React Testing Library
+  - **End-to-end**
+    - Cypress
+- **Utils**
+  - Prettier
+  - ESLint
+  - EditorConfig
+  - Husky
+- **Commiting**
+  - Conventional Commits
+  - Commitlint
+  - Commitizen
 
-In the project directory, you can run:
+## Contributing
 
-### `npm start`
+<details>
+  <summary>
+    <a style="font-size: 24px; font-weight: bold" href="https://www.conventionalcommits.org">
+      Conventional Commits
+    </a>
+  </summary>
+  <br>
+  The Conventional Commits specification is a lightweight convention on top of commit messages. It provides an easy set of rules for creating an explicit commit history; which makes it easier to write automated tools on top of.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  #### Structure
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+  The commit message should be structured as follows:
 
-### `npm test`
+  ```
+  <type>([optional scope]): <description>
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  [optional body]
 
-### `npm run build`
+  [optional footer]
+  ```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  #### Elements
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+  The main structural elements are:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  | Element         | Description                              | Where to use | Correlates to (SemVer) |
+  | --------------- | ---------------------------------------- | ------------ | ---------------------- |
+  | fix             | patches a bug in the codebase            | \<type>      | PATCH (1.0.1)          |
+  | feat            | introduces a new feature to the codebase | \<type>      | MINOR (1.1.0)          |
+  | BREAKING CHANGE | introduces a breaking API change         | \<body>      | MAJOR (2.0.0)          |
 
-### `npm run eject`
+  ##### Types
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  Available <b>types</b> that can be used are:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  * <b>build</b>: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+  * <b>ci</b>: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+  * <b>docs</b>: Documentation only changes
+  * <b>feat</b>: A new feature
+  * <b>fix</b>: A bug fix
+  * <b>perf</b>: A code change that improves performance
+  * <b>refactor</b>: A code change that neither fixes a bug nor adds a feature
+  * <b>style</b>: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+  * <b>test</b>: Adding missing tests or correcting existing tests
+  * <b>chore</b>: Updating grunt tasks etc; no production code change
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  #### Examples
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  Commit message with description and breaking change in body:
 
-## Learn More
+  ```
+  feat: allow provided config object to extend other configs
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+  ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  Commit message with optional `!` to draw attention to breaking change:
+
+  ```
+  chore!: drop Node 6 from testing matrix
+
+  BREAKING CHANGE: dropping Node 6 which hits end of life in April
+  ```
+
+  Commit message with no body:
+
+  ```
+  docs: correct spelling of CHANGELOG
+  ```
+
+  Commit message with scope:
+
+  ```
+  feat(lang): add polish language
+  ```
+
+  Commit message for a fix using an (optional) issue number:
+
+  ```
+  fix: correct minor typos in code
+
+  see the issue for details on the typos fixed
+
+  closes issue #12
+  ```
+</details>
+
+<details>
+  <summary>
+    <a style="font-size: 24px; font-weight: bold" href="https://github.com/commitizen/cz-cli">
+      Commitizen
+    </a> (optional)
+  </summary>
+  <br>
+  Commitizen is a CLI tool to help commiting according to Conventional Commits rules, among others.
+
+  ![Commitizen](https://github.com/commitizen/cz-cli/raw/master/meta/screenshots/add-commit.png)
+
+  ##### Installing
+
+  ```
+  npm install -g commitizen cz-conventional-changelog
+  ```
+
+  Or if you are using Yarn:
+
+  ```
+  yarn global add commitizen cz-conventional-changelog
+  ```
+
+  ##### Configuring the repository
+
+  Add the following to ```package.json```:
+
+  ```
+    "config": {
+      "commitizen": {
+        "path": "cz-conventional-changelog"
+      }
+    }
+  ```
+</details>
