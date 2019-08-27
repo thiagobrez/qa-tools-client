@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/thiagobrez/qa-tools/compare/v0.1.1...v0.1.2) (2019-08-27)
+
+
+### Bug Fixes
+
+* **app:** fix button background color ([4a9eb7c](https://github.com/thiagobrez/qa-tools/commit/4a9eb7c))
+
 ### [0.1.1](https://github.com/thiagobrez/qa-tools/compare/v0.1.0...v0.1.1) (2019-08-14)
 
 ## 0.1.0 (2019-08-05)
