@@ -9,7 +9,7 @@ const App: React.FC = () => (
     <header className="App-header">
       <img src={logo}
            className="App-logo"
-           alt="logo"
+           alt="app-logo"
       />
       <TextInput color="white"
                  backgroundColor="black"
