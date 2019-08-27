@@ -16,7 +16,7 @@ export default function Button({ color, backgroundColor, text }: Props) {
   };
 
   const textStyle = {
-    fontSize: '20px',
+    fontSize: '22px',
     color,
   };
 
