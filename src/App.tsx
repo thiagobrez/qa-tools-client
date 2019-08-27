@@ -15,7 +15,7 @@ const App: React.FC = () => (
                  backgroundColor="black"
       />
       <Button text="Click here"
-              backgroundColor="darkred"
+              backgroundColor="darkgrey"
               color="white"
       />
     </header>
