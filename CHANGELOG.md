@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/thiagobrez/qa-tools/compare/v0.1.2...v0.1.3) (2019-08-27)
+
+
+### Bug Fixes
+
+* **app:** fix img alt-description ([ab6c9d8](https://github.com/thiagobrez/qa-tools/commit/ab6c9d8))
+* **button:** add fontWeight bold ([2da1042](https://github.com/thiagobrez/qa-tools/commit/2da1042))
+* **button:** fix button fontSize ([9cf3549](https://github.com/thiagobrez/qa-tools/commit/9cf3549))
+* **button:** fix fontWeight ([bd83ba2](https://github.com/thiagobrez/qa-tools/commit/bd83ba2))
+
 ### [0.1.2](https://github.com/thiagobrez/qa-tools/compare/v0.1.1...v0.1.2) (2019-08-27)
 
 
