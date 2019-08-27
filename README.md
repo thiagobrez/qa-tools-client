@@ -19,6 +19,8 @@ Testing the integration of the following tools/technologies:
   - ESLint
   - EditorConfig
   - Husky
+- **Code coverage**
+  - Coveralls
 - **Release & Version**
   - Standard-version
 - **Commiting**
