@@ -17,6 +17,7 @@ export default function Button({ color, backgroundColor, text }: Props) {
 
   const textStyle = {
     fontSize: '22px',
+    fontWeight: 'bold',
     color,
   };
 
