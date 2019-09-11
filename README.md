@@ -28,7 +28,6 @@ Testing the integration of the following tools/technologies:
   - Commitlint
   - Commitizen
 
-
 ## Contributing
 
 <details>
